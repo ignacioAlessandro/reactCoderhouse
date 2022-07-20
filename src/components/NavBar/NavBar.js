@@ -1,9 +1,9 @@
 //siempre con UpperCamelCase
 
-
+import './NavBar.css'
 const NavBar  =()=>{
     return(
-        <nav>
+        <nav className='NavBar'>
             <h1>logoo</h1>
             <ul>
                 <li><button>inicio</button></li>

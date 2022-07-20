@@ -1,0 +1,16 @@
+.NavBar{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between ;
+}
+
+.NavBar ul{
+    display: flex;
+}
+
+li{
+    list-style: none;
+    margin-left: 2rem;
+}
