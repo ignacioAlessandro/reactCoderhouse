@@ -1,5 +1,5 @@
 import './App.css';
-import ItemContainer from './components/ItemContainer/ItemContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import NavBar from './components/NavBar/NavBar';
 import Modal from './components/Modal/Modal';
 
@@ -9,9 +9,9 @@ function App() {
       <NavBar/>
       <h1>hello word</h1>
       <div className='list'>
-        <ItemContainer titulo="productos en oferta"/>
-        <ItemContainer titulo="productos mas vendidos"/>
-        <ItemContainer titulo="productos en temporada"/>
+        <ItemListContainer titulo="productos en oferta"/>
+        <ItemListContainer titulo="productos mas vendidos"/>
+        <ItemListContainer titulo="productos en temporada"/>
       </div>
       {/* esto serviria para renderizar lo que esta dentrodeun modal */}
       <Modal ejm="esto es un aprop de ejm">
