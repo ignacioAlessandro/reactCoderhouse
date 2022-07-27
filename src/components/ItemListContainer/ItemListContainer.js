@@ -1,13 +1,29 @@
 import ItemProduct from "../ItemProduct/ItemProduct"
 const  ItemContainer = ({titulo} ) => {
-       
+    const product1 ={
+        tile: "campera invierno",
+        precio: 15000,
+        imagen: 'cuidado.jpg',
+        stock:6
+    }
+    const product2 ={
+        tile: "remera",
+        precio: 25000,
+        imagen: 'hielo.jpg',
+        stock:4
+    }
+    const product3 ={
+        tile: "remera",
+        precio: 25000,
+        imagen: 'decierto.jpg',
+        stock:1
+    }
     return(
         <div>
             <h2>{titulo}</h2>
-            <ItemProduct producto="remera" precio={1500}/>
-            <ItemProduct producto="pantalon" precio={2000}/>
-            <ItemProduct producto="campera" precio={1500}/>
-            <ItemProduct producto="zapatillas" precio={5000}/>
+            <ItemProduct data={product1}/>
+            <ItemProduct data={product2}/>
+            <ItemProduct data={product3}/>
         </div>
     )
 }
