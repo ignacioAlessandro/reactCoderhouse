@@ -2,6 +2,7 @@ import {useEffect, useState } from "react"
 import ItemProduct from "../Item/Item"
 import ItemList from "../ItemList/ItemList"
 import products from "../../Utils/products.Mock"
+import ItemDetails from "../../ItemDetail/ItemDetail"
 const  ItemContainer = ({titulo} ) => {
     // const product1 ={
     //     tile: "campera invierno",
@@ -56,11 +57,13 @@ const  ItemContainer = ({titulo} ) => {
     //         console.log(error)
     //     }
     // }
-
+    const listaReducida = products[0]
+    console.log(listaReducida)
     return(
         <div>
             <h2>{titulo}</h2>
-            <ItemList dataProducts={listProducts}/>
+            <ItemDetails dataProducts={listaReducida}/>
+            {/* <ItemList dataProducts={listProducts}/> */}
         </div>
     )
 }

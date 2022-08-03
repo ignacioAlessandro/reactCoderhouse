@@ -1,5 +1,6 @@
 import ItemProduct from "../Item/Item"
 const ItemList = ({dataProducts})=>{
+    
     return(
         // esta etiqueta engloba el contenido pero sin ser un div 
         <>
