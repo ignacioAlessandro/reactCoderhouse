@@ -1,8 +1,7 @@
 import {useEffect, useState } from "react"
-import ItemProduct from "../Item/Item"
+// import ItemProduct from "../Item/Item"
 import ItemList from "../ItemList/ItemList"
 import products from "../../Utils/products.Mock"
-import ItemDetails from "../../ItemDetail/ItemDetail"
 const  ItemContainer = ({titulo} ) => {
     // const product1 ={
     //     tile: "campera invierno",
@@ -44,7 +43,7 @@ const  ItemContainer = ({titulo} ) => {
             console.log("desactivar imagen de carga :v")
         })       
     },[])
-    // console.log("activar imagen de carga ;)")
+    // console.log(listProducts)
 
 
     // funsion asyncrona
@@ -57,19 +56,17 @@ const  ItemContainer = ({titulo} ) => {
     //         console.log(error)
     //     }
     // }
-    const listaReducida = products[0]
-    console.log(listaReducida)
     return(
         <div>
             <h2>{titulo}</h2>
-            <ItemDetails dataProducts={listaReducida}/>
-            {/* <ItemList dataProducts={listProducts}/> */}
+            <ItemList dataProducts={listProducts}/>
         </div>
     )
 }
 {/* <ItemProduct data={product1}/>
 <ItemProduct data={product2}/>
 <ItemProduct data={product3}/> */}
+{/* <ItemDetails dataProducts={listaReducida}/> */}
 
 export default ItemContainer
 

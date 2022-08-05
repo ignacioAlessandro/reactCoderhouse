@@ -18,8 +18,8 @@ const products = [
             id:3,
             tile: "remera",
             precio: 25000,
-            imagen: 'hielo.jpg',
-            stock:4
+            imagen: 'decierto.jpg',
+            stock:0
         }
     
 ]

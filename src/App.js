@@ -1,24 +1,38 @@
 import './App.css';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import NavBar from './components/NavBar/NavBar';
-import Modal from './components/Modal/Modal';
-
+import Contacto from './pages/Contacto'
+import Home from './pages/Home';
+import Productos from './pages/Productos';
+import Detail from './pages/Details';
+//importando react router
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+//BrowserRouter: embuelve toda la aplicaicion y le da la capacidad de manejar rutas a su contenido
+//Routes: embuelve las rutas directas de la aplicacion lo que quede fuera del contenedor sera renderizado en todas las rutas
+//Route: define ruta especifa dentro de Routes propiedades: path="/rutaEjm" y element{componente a renderizar}
 function App() {
   return (
-    <div className="App">
-      <NavBar/>
-      <h1>hello word</h1>
-      <div className='list'>
-        {/* <ItemListContainer titulo="productos en oferta"/>
-        <ItemListContainer titulo="productos mas vendidos"/> */}
-        <ItemListContainer titulo="productos en temporada"/>
-      </div>
-      {/* esto serviria para renderizar lo que esta dentrodeun modal */}
-      {/* <Modal ejm="esto es un aprop de ejm">
-          <h2>modal ejj</h2>
-          <p>esto puede bariar dependiendo la ventana emergente</p>
-      </Modal> */}
-    </div>
+  <BrowserRouter>
+     <NavBar/>
+
+    <Routes>
+      <Route path='/' element={
+        <Home/>
+      }/>
+
+      <Route path='/Productos' element={
+        <Contacto/>
+      }/>
+
+      <Route path='/Contacto' element={
+        <Productos/>   
+      }/>
+
+      <Route path='/productos/:id' element={
+        <Detail/>   
+      }/>
+
+    </Routes>
+  </BrowserRouter>
   );
 }
 

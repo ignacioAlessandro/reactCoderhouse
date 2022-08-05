@@ -1,30 +1,27 @@
+import {Link} from "react-router-dom"
 import ItemCount from "../ItemCount/ItemCount"
 // esto es un componente
 // con destructuring
-const  ItemProduct = ({stock,precio,producto,imagen}) => {
-    // poner data como parametro a pasar mas tarde const {producto,imagen,precio} = data
+const  ItemProduct = ({data}) => {
+    const {producto,imagen,precio, id} = data
     // console.log(props)
     return(
+    <Link to={`/Productos/${id}`}>
         <div>
             <img src={`/assets/${imagen}`} alt="imagen producto"/>
             <p>{producto}</p>
             <span>${precio}</span>
-            <ItemCount stock={stock}/>
-            <p>stock: {stock}</p>
+            <ItemCount stock={data.stock}/>
+            <p>stock: {data.stock}</p>
             <button>comprar</button>
         </div>
-    )
+    </Link>
+
+    )    
+    
 }
 
-{/* <div>
-<img src={`/assets/${imagen}`} alt="imagen producto"/>
-<p>{producto}</p>
-<span>${precio}</span>
-<ItemCount stock={data.stock}/>
-<p>stock: {data.stock}</p>
-<button>comprar</button>
-</div>
-) */}
+
 
 // comun
 // const  ItemProduct = (props ) => {
