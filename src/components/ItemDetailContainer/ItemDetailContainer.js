@@ -3,32 +3,46 @@ import products from "../../Utils/products.Mock"
 import {useEffect, useState } from "react"
 import {useParams} from 'react-router-dom'
 const ItemDetail = () => {
-    const parametro = useParams()
-    const [listProducts, setListProducts] = useState([])
-    const getProductos = new Promise( (resolve,reject) => {
-        setTimeout(() => {
-            resolve(products)
-        }, 2000);
-    }) 
+    const [productData, setProductData] = useState({})
+    const [showModal, setShowModal] = useState(false)
+    const { id } = useParams()
+
+    useEffect( () => {
+        filterById()
+    }, [id])
+
+    const filterById = () => {
+        products.some( (product) => {
+            if(product.id == id) {
+                console.log("producto filtrado: ", product)
+                setProductData(product) 
+            }
+        }
+    )
+    }
+    // const {id} = useParams()
+    // const [listProducts, setListProducts] = useState([])
+    // const [listaReducida, setListaReducida] = useState({})
+    // // const getProductos = new Promise( (resolve,reject) => {
+    // //     setTimeout(() => {
+    // //         resolve(products)
+    // //     }, 2000);
+    // // }) 
+    // const getProductos = () =>{
+    //     listaReducida = products.find(x=> x.id == id)
+    // }
+    // useEffect(()=>{
+    //     getProductos()
+    // },{})
     
-    useEffect(()=>{
-        getProductos.then((res)=>{
-            setListProducts(res)
-        }).catch((error)=>{
-            console.log("la llamada fallo")
-        }).finally(()=>{
-            console.log("desactivar imagen de carga :v")
-        })       
-    },[])
-    
-    // const listaReducida2 = listProducts.map((product)=>{
+    // // const listaReducida2 = listProducts.map((product)=>{
     //     return 
     // })
     // const listaReducida = listProducts.map(products)
 
     // const listaReducida = products[userparametro]
     // const listaReducida2 = listaReducida.find((productos)=>productos.id == parametro) 
-    const listaReducida = listProducts.find(x=> x.id == parametro.id)
+   
     // console.log(`yqs${}`)
     // console.log(`el valor es: ${parametro.id}`)
     
@@ -43,7 +57,9 @@ const ItemDetail = () => {
         // esta etiqueta engloba el contenido pero sin ser un div 
         <>
             
-            <DetailItem dataId={listaReducida}
+            <DetailItem
+                 data={productData} setShowModal={setShowModal}
+                // dataId={setListaReducida}
             
                 // imagen={imagen} 
                 // precio={precio}
