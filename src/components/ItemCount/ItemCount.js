@@ -1,6 +1,6 @@
 // inportar estados
 import { useState } from "react"
-const  ItemCount = ({stock}) => {
+const  ItemCount = ({stock, setQuantitySelected}) => {
 
     const [contador, setContador] = useState(1) 
     // funcionalidad estado
@@ -18,6 +18,9 @@ const  ItemCount = ({stock}) => {
             setContador(contador-1)
         }
     }
+    const onAdd = () => {
+        setQuantitySelected(contador)
+    }
     return(
         <div>
             <div className="countProd">
@@ -26,6 +29,7 @@ const  ItemCount = ({stock}) => {
                 <button onClick={removeNumber}>-</button>
             </div>
             <p>stock: {stock}</p>
+            <button onClick={onAdd}>AGREGAR AL CARRITO</button>
         </div>
     )
 }

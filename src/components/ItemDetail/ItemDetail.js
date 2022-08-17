@@ -1,9 +1,10 @@
-// import ItemCount from "../ItemCount/ItemCount"
-// import {useEffect, useState } from "react"
+import ItemCount from "../ItemCount/ItemCount"
+import { useState } from "react"
+import { Link } from 'react-router-dom'
 // esto es un componente
 // con destructuring
 const  DetailItem = (data) => {
-    // const [listProducts, setListProducts] = useState([])
+    const [quantitySelected, setQuantitySelected] = useState(0)
     const datos = data.data
     
     // const {stock,precio,producto,imagen} = data
@@ -15,9 +16,14 @@ const  DetailItem = (data) => {
             <img src={`/assets/${datos.imagen}`} alt="imagen producto"/>
             <p>{datos.producto}</p>
             <span>${datos.precio}</span>
-            {/* <ItemCount stock={stock}/> */}
-            <p>stock: {datos.stock}</p>
-            <button>comprar</button>
+            {
+                quantitySelected > 0 
+                    ? <button><Link to="/cart">TERMINAR COMPRA</Link></button> 
+                    : <ItemCount setQuantitySelected={setQuantitySelected} productData={data}/>
+            }
+            {/* <ItemCount stock={datos.stock} setQuantitySelected={setQuantitySelected}/> */}
+            {/* <p>stock: {datos.stock}</p> */}
+            {/* <button>comprar</button> */}
         </div>
     )
 }

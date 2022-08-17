@@ -4,6 +4,7 @@ import Contacto from './pages/Contacto'
 import Home from './pages/Home';
 import Productos from './pages/Productos';
 import Detail from './pages/Details';
+import Cart from './pages/Cart'
 //importando react router
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 //BrowserRouter: embuelve toda la aplicaicion y le da la capacidad de manejar rutas a su contenido
@@ -29,6 +30,9 @@ function App() {
 
       <Route path='/productos/:id' element={
         <Detail/>   
+      }/>
+      <Route path='/cart' element={
+        <Cart />
       }/>
 
     </Routes>

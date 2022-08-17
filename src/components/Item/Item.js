@@ -6,16 +6,16 @@ const  ItemProduct = ({data}) => {
     const {producto,imagen,precio, id} = data
     // console.log(props)
     return(
-    <Link to={`/Productos/${id}`}>
         <div>
+            <Link to={`/Productos/${id}`}>
             <img src={`/assets/${imagen}`} alt="imagen producto"/>
+            </Link>
             <p>{producto}</p>
             <span>${precio}</span>
             <ItemCount stock={data.stock}/>
             <p>stock: {data.stock}</p>
             <button>comprar</button>
         </div>
-    </Link>
 
     )    
     
